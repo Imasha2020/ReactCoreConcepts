@@ -24,7 +24,7 @@ class Square{
     set area (newArea) 
     {
         this.width = Math.sqrt(newArea);
-        this.height = this.sqrt(newArea);
+        this.height = Math.sqrt(newArea);
 
     }
 
@@ -32,6 +32,11 @@ class Square{
     {
         return `I am a ${this.color} Square.
         My height is ${this.height} and my width is ${this.width}.`;
+    }
+
+    static calArea(a , b)
+    {
+        return a*b;
     }
 }
 
@@ -43,3 +48,5 @@ console.log(rect1.area);//property access no ()
 rect1.area = 25;//set area property
 console.log(rect1.width);
 console.log(rect1.area);
+
+console.log(Square.calArea(5,6)); //static method call no instance needed
