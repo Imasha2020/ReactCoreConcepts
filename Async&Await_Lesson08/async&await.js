@@ -16,7 +16,7 @@ function takeShower(){
 function doHomework(){
     return new Promise((resolve , reject)=>{
         setTimeout(()=>{
-            const homework = false;
+            const homework = true;
             if(homework){
                 console.log("I do homework");
                 resolve("I did homework");
@@ -43,7 +43,8 @@ function playGame(){
 
 async function doAll(){
     try{
-        await takeShower();
+        const result = await takeShower();
+        console.log(result)
         await doHomework();
         await playGame();
     }catch(error){
