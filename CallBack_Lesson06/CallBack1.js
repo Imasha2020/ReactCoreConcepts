@@ -1,3 +1,5 @@
+//Normally Callback function is used in Asynchronous programming
+
 function openFile(callback){
     setTimeout(()=>{
         console.log("File Opened");
