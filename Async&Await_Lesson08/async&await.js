@@ -16,7 +16,7 @@ function takeShower(){
 function doHomework(){
     return new Promise((resolve , reject)=>{
         setTimeout(()=>{
-            const homework = true;
+            const homework = false;
             if(homework){
                 console.log("I do homework");
                 resolve("I did homework");
@@ -41,15 +41,15 @@ function playGame(){
     });
 }
 
-takeShower().then((result)=>{
-    console.log(result);
-    return doHomework();
-}).then((result)=>{
-    console.log(result);
-    return playGame();
-}).then((result)=>{
-    console.log(result);
-    console.log("All tasks are done");
-}). catch((error)=>{
-    console.log(error);
-})
+async function doAll(){
+    try{
+        await takeShower();
+        await doHomework();
+        await playGame();
+    }catch(error){
+        console.log(error)
+    }
+   
+}
+
+doAll();
