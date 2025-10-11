@@ -1,6 +1,9 @@
+import  React from "react";
+import {createRoot} from "react-dom";
+
 const Student = () => {
   return React.createElement("div", {}, [
-    React.createElement("h3", {}, "Amal"),
+    React.createElement("h3", {}, "Kamal"),
     React.createElement("h3", {}, 20),
     React.createElement("h3", {}, "BSc"),
   ]);
@@ -29,5 +32,5 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
+const root = createRoot(container);
 root.render(React.createElement(App));
